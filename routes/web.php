@@ -25,9 +25,9 @@ Route::group(['middleware' => ['admin:admin']], function(){ // First admin param
     Route::post('admin/login',[AdminController::class, 'store'])->name('admin.login');
 });
 
-Route::middleware(['auth:sanctum,admin', 'verified'])->get('/admin/dashboard', function () {
+Route::middleware(['auth:sanctum,admin', 'verified'])->get('/admin', function () {
     return view('dashboard');
-})->name('admin.dashboard');
+})->name('admin');
 // ---------------------------------------------------------
 // User ---------------------------------------------------------
 Route::middleware(['auth:sanctum,web', 'verified'])->get('/dashboard', function () {
